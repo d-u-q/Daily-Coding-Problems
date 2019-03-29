@@ -3,17 +3,16 @@ def multExcept(ln):
     tot = 1
     for x in ln:
         tot = tot * x
-    for i, y in enumerate(ln):
-        rn.append(tot/ln[i])
+    for i in enumerate(ln): rn.append(tot/ln[i[0]])
     return rn
 
 def multExceptNoDiv(ln):
     rn = []    
-    for i,x in enumerate(ln):
+    for i in enumerate(ln):
         tot = 1
-        for j,y in enumerate(ln):
-            if i == j: tot = tot*1
-            else: tot = tot * ln[j]
+        for j in enumerate(ln):
+            if i[0] == j[0]: tot = tot*1
+            else: tot = tot * j[1]
         rn.append(tot)
     return rn
 
